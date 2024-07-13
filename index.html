@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CssStyles/loginStyle.css">
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="icons/gate-logoweb.png">
+</head>
+<body>
+    <div class="container">
+        
+        <p class="loginTitle">Login page</p>
+        <br>
+        <div class="login">
+            <div class="userNameDiv field">
+                <label for="userName">Username:</label>
+                <br>
+                <input type="text" id="userName">
+            </div>
+            <div class="passDiv field">
+                <label for="pass">Password:</label>
+                <br>
+                <input type="password" id="pass">
+            </div>
+        </div>
+        <button id="btn1" class="sendBtn" type="button">Confirm</button>
+        <button id="btn2" class="resetBtn" type="reset">Reset</button>
+        <img class="imageCorner" src="images/kurisu2.png" alt="kurisu">
+        <div id="opacityID" class="opacityDiv">
+            <p class="wrongTitle">wrong password!</p>
+            <img class="wrongImg" src="images/wrongPass.png" alt="wrongPass">
+        </div>
+    </div>
+    <!-- <script src="JavascriptFunctions/loginFun.js"></script>
+    <script src="JavascriptFunctions/open.js"></script> -->
+    <script src="transfer.js"></script>
+</body>
+</html>

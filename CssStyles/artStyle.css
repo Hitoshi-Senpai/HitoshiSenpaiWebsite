@@ -1,0 +1,528 @@
+:root{
+    --mainColor: #024950;
+    --secondColor: #003135;
+    --modeColor: white;
+    --menuColor: #964734;
+    --headerMenuColor: #693224;
+    --footerColor: #0FA4AF;
+    --listBtn: white;
+    --listBtnAfterEf: yellow;
+    --slidebtn: black;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    /* background-image: url(images/image5.jpg); */
+    background-color: var(--mainColor);
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    display: grid;
+    grid-template-rows:   repeat(30, 10vh);
+    grid-template-columns: 10vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw;
+
+}
+
+.bar{
+    grid-row: 1 / 2;
+    grid-column: 1 / 11;
+    background-color: var(--secondColor);
+
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+}
+
+.sidebar{
+    grid-row: 2 / 11;
+    grid-column: 1 / 2;
+    background-color: var(--mainColor);
+}
+
+
+.footer{
+    grid-row: 29 / 30;
+    grid-column: 1 / 11;
+    background-color: var(--footerColor);
+}
+
+
+/* -------------------- */
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+
+.bar{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 11111;
+    padding: 1.5vw 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+}
+
+.logo{
+    font-size: 2.5vw;
+    font-weight: 700;
+    color: var(--modeColor);
+    animation-name: change-color;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes change-color{
+    0% {
+        color: white;
+    }
+    30%{
+        color: yellow;
+    }
+    
+    55%{
+        color: greenyellow;
+    }
+    75%{
+        color: green;
+    }
+
+    100%{
+        color: white;
+    }
+
+}
+
+.navlist{
+    display: flex;
+
+}
+
+.navlist a{
+    display: inline-flex;
+    font-size: 1.7vw;
+    font-weight: 500;
+    margin: 0 2.5vw;
+    transition: all 0.3s ease;
+    color: var(--listBtn)
+
+}
+
+.navlist a:hover{
+    transform: translateY(-0.5vw);
+}
+
+/* ----------------------sidebar------------------------ */
+
+.sidebar2{
+    position: fixed;
+    left: -20vw;
+    width: 20vw;
+    height: 100%;
+    background-color: var(--menuColor);
+    transition: all 0.5s ease;
+}
+
+.sidebar2 header{
+    font-size: 2vw;
+    color: var(--modeColor);
+    text-align: center;
+    line-height: 6vw;
+    background-color: var(--headerMenuColor);
+    user-select: none;
+
+}
+
+.sidebar2 ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 5vw;
+    font-size: 1.8vw;
+    color: var(--modeColor);
+    padding-left: 3.5vw;
+    box-sizing: border-box;
+    border-top: 0.1vw solid rgba(255, 255, 255, 0.1);
+    border-bottom: 0.1vw solid black;
+}
+
+.sidebar2 ul li:hover a{
+    padding-left: 5vw;
+}
+
+/* edited: */
+
+.navLink:hover{
+    padding-left: 0;
+    color: var(--listBtnAfterEf);
+    margin: 0 3vw;
+}
+
+.navlist li:hover{
+    padding-left: 0;
+}
+
+.sidebar2 ul a i{
+    margin-right: 1.5vw;
+}
+
+#check{
+    display: none;
+
+}
+
+#btn, #cancel{
+    position: fixed;
+    cursor: pointer;
+    background-color: var(--slidebtn);
+    border-radius: 0.3vw;
+
+}
+
+#btn {
+    left: 0vw;
+    top: 10vh;
+    font-size: 2vw;
+    color: var(--modeColor);
+    padding: 0.5vw 1vw;
+    transition:  transform 0.3s ease;
+    opacity: 0.3s ease;
+
+}
+
+#cancel{
+    z-index: 1111;
+    left: 16vw;
+    top: 10vh;
+    font-size: 2vw;
+    color: var(--modeColor);
+    padding: 0.5vw 1vw;
+}
+
+#check:checked ~ #btn{
+    transform: translateX(2vw);
+    opacity: 0;
+}
+
+.footer-title{
+    width: 60vw;
+    height: 5vw;
+    font-size: 2.5vw;
+    font-weight: bold;
+    color: var(--modeColor);
+    padding: 1vw
+}
+
+.space{
+    grid-row: 30 / 31;
+    grid-column: 1 / 8;
+    background-color: var(--footerColor);
+}
+
+.footer-icons{
+    grid-row: 30 / 31;
+    grid-column: 8 / 11;
+    background-color: var(--footerColor);
+}
+
+.social-icons a img{
+    width: 4.2vw;
+    height: 3.5vw;
+    padding: 0 1vw 0 0;
+}
+
+
+.social-icons a img:hover{
+    padding: 0 0.9vw 0 0;
+    -webkit-filter: grayscale(25%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(25%);
+    /* width: 4.3vw;
+    height: 3.7vw; */
+}
+
+.paintingsImg{
+    /* grid-row: 3 / 6;
+    grid-column: 2 / 4; */
+    width: 100%;
+    height: 100%;
+}
+
+.p1{
+    grid-row: 3 / 8;
+    grid-column: 2 / 5;
+}
+
+.p2{
+    grid-row: 3 / 8;
+    grid-column: 6 / 9;
+}
+
+.p3{
+    grid-row: 9 / 13;
+    grid-column: 2 / 5;
+}
+
+.p4{
+    grid-row: 9 / 13;
+    grid-column: 6 / 9;
+}
+
+.p5{
+    grid-row: 14 / 18;
+    grid-column: 2 / 5;
+}
+
+.p6{
+    grid-row: 14 / 18;
+    grid-column: 6 / 9;
+}
+
+.p7{
+    grid-row: 19 / 24;
+    grid-column: 2 / 5;
+}
+
+#sunBtn{
+    position: fixed;
+    /* display: none; */
+    /* grid-row: 1 / 2;
+    grid-column: 9 / 10; */
+    z-index: 11111;
+    margin: 2vw auto;
+    cursor: pointer;
+    top: 1.5vh;
+    left: 85vw;
+    font-size: 2vw;
+    color: var(--modeColor);
+}
+
+#moonBtn{
+    position: fixed;
+    display: none;
+    /* grid-row: 1 / 2;
+    grid-column: 9 / 10; */
+    z-index: 11111;
+    margin: 2vw auto;
+    cursor: pointer;
+    top: 1.5vh;
+    left: 85vw;
+    font-size: 2vw;
+    color: var(--footerColor);
+}
+
+
+
+
+
+@media(max-width: 700px){
+
+    .logo{
+        font-size: 3.5vw;
+    }
+
+    .navlist a{
+        font-size: 3vw;
+    }
+
+    .navlist a {
+        font-size: 2.5vw;
+        font-weight: 500;
+        margin: 0 3vw;
+    }
+
+    .p1{
+        grid-row: 3 / 7;
+        grid-column: 2 / 5;
+    }
+    
+    .p2{
+        grid-row: 3 / 7;
+        grid-column: 6 / 9;
+    }
+    
+    .p3{
+        grid-row: 8 / 12;
+        grid-column: 2 / 5;
+    }
+    
+    .p4{
+        grid-row: 8 / 12;
+        grid-column: 6 / 9;
+    }
+    
+    .p5{
+        grid-row: 13 / 17;
+        grid-column: 2 / 5;
+    }
+    
+    .p6{
+        grid-row: 13 / 17;
+        grid-column: 6 / 9;
+    }
+    
+    .p7{
+        grid-row: 18 / 22;
+        grid-column: 2 / 5;
+    }
+
+    .container{
+        grid-template-rows: repeat(25, 10vh);
+    }
+
+    .footer{
+        grid-row: 24 / 25;
+    }
+
+    .space{
+        grid-row: 25 / 26;
+    }
+    
+    .footer-icons{
+        grid-row: 25 / 26;
+    }
+    
+
+}
+
+@media(max-width: 550px){
+
+    .sidebar2 {
+        position: fixed;
+        left: -50vw;
+        width: 50vw;
+        height: 100%;
+    }
+
+    .sidebar2 header{
+        font-size: 4vw;
+        line-height: 10vw;
+    }
+
+    .sidebar2 ul a{
+        line-height: 9vw;
+        font-size: 3.2vw;
+        padding-left: 5vw;
+        box-sizing: border-box;
+        border-top: 0.2vw solid rgba(255, 255, 255, 0.1);
+        border-bottom: 0.2vw solid black;
+    }
+    
+    ul li:hover a{
+        padding-left: 10vw;
+    }
+    
+    .sidebar2 ul a i{
+        margin-right: 3vw;
+    }
+
+    #btn, #cancel{
+        border-radius: 0.6vw;
+    }
+    
+    #btn {
+        left: 0vw;
+        top: 10vh;
+        font-size: 4vw;
+        padding: 1vw 2vw;
+    
+    }
+    
+    #cancel{
+        left: 43vw;
+        top: 10vh;
+        font-size: 4vw;
+        padding: 1vw 2vw;
+    }
+    
+    #check:checked ~ #btn{
+        transform: translateX(4vw);
+        opacity: 0;
+    }
+
+    .social-icons a img{
+        width: 6vw;
+        height: 5.2vw;
+        padding: 0 1.2vw 0 0;
+    }
+
+    .container{
+        grid-template-rows:   repeat(43, 10vh);
+    }
+
+    .paintingsImg{
+        grid-column: 2 / 10;
+    }
+
+    .p1{
+        grid-row: 3 / 7;
+    }
+
+    .p2{
+        grid-row: 9 / 13;
+    }
+
+    .p3{
+        grid-row: 14 / 18;
+    }
+
+    .p4{
+        grid-row: 19 / 23;
+    }
+
+    .p5{
+        grid-row: 24 / 28;
+    }
+
+    .p6{
+        grid-row: 29 / 33;
+    }
+
+    .p7{
+        grid-row: 34 / 38;
+    }
+
+    .footer{
+        grid-row: 42 / 43;
+    }
+
+    .space{
+        grid-row: 43 / 44;
+        grid-column: 1 / 7;
+        background-color: var(--footerColor);
+    }
+    
+    .footer-icons{
+        grid-row: 43 / 44;
+        grid-column: 7 / 11;
+        background-color: var(--footerColor);
+    }
+
+    .footer-title{
+        width: 80vw;
+        height: 7vw;
+        font-size: 3.5vw;
+        padding: 1vw
+    }
+    
+    #sunBtn {
+        font-size: 3vw;
+    }
+}
+
+/*  1vw  => 10px */
